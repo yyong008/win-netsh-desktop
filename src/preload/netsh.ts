@@ -2,6 +2,7 @@ import * as os from 'node:os'
 import sudo from 'sudo-prompt'
 // import { promisify } from 'node:util'
 import { exec } from 'node:child_process'
+import { shell } from 'electron'
 
 function promisify(fn: typeof exec) {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -19,7 +20,6 @@ function promisify(fn: typeof exec) {
 }
 
 const asyncExec = promisify(exec)
-const asyncSudoExec = promisify(sudo.exec)
 
 const options = {
   name: 'Electron'
@@ -36,7 +36,7 @@ export type IfacesObj = {
 }
 
 export function openDefaultBrowser(url: string): void {
-  exec('start' + url)
+  shell.openExternal(url)
 }
 
 function toLines(text: string): string[] {
