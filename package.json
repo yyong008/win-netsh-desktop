@@ -1,0 +1,53 @@
+{
+  "name": "win-netsh-desktop",
+  "version": "0.0.1",
+  "description": "A Windows Netsh use vite-electron",
+  "main": "./out/main/index.js",
+  "author": "magneisum-",
+  "homepage": "https://www.electronjs.org",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "build": " electron-vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "build:win": "npm run build && electron-builder --win --config"
+  },
+  "dependencies": {
+    "@ant-design/pro-components": "^2.5.1",
+    "@electron-toolkit/preload": "^1.0.3",
+    "@electron-toolkit/utils": "^1.0.2",
+    "@electron/remote": "^2.0.9",
+    "antd": "^5.5.1",
+    "electron-updater": "^5.3.0",
+    "lodash": "^4.17.21",
+    "react-router-dom": "^6.11.2",
+    "sudo-prompt": "^9.2.1"
+  },
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@electron/notarize": "^1.2.3",
+    "@types/node": "16.18.21",
+    "@types/react": "18.0.30",
+    "@types/react-dom": "18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "electron": "^22.3.4",
+    "electron-builder": "^23.6.0",
+    "electron-vite": "^1.0.21",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.2.1"
+  }
+}
